@@ -1,0 +1,7 @@
+.myInput{
+  color: black;
+  &::placeholder{
+    font-style: italic;
+    color: #c2c2c2;
+  }
+}

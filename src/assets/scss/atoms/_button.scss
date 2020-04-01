@@ -1,0 +1,6 @@
+.myButton{
+  font-weight: 600;
+  &:disabled{
+    cursor: not-allowed;
+  }
+}
