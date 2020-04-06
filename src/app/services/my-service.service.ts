@@ -15,43 +15,19 @@ export class MyServiceService {
 
   constructor(private http: HttpClient) {
     console.log('Servicio listo');
-    this.getPeople();
+    // this.getPeople();
   }
 
-  getPeople() {
-    this.consumeApi('https://swapi.co/api/people/').subscribe( (data: any) => {
-      this.people = data.results;
-      console.log('people');
-      console.log(this.people);
-      this.getHomeWorld(this.people);
-      this.getFilms(this.people);
-      this.respuesta = true;
-    });
+  getPeople(): any {
+    return this.consumeApi('https://swapi.co/api/people/');
   }
 
-  getHomeWorld( people: any[]) {
-    people.forEach(p => {
-      this.consumeApi(p.homeworld).subscribe( (data: any) => {
-        this.homeworld.push(data);
-      });
-    });
-    console.log('Homeworlds');
-    console.log(this.homeworld);
+  getHomeWorld( url: string) {
+    return this.consumeApi(url);
   }
 
-  getFilms(people: any){
-    let d = {};
-    people.forEach(p => {
-        console.log('Grupo');
-        p.films.forEach(film => {
-            this.consumeApi(film).subscribe( (data: any) => {
-              d = data;
-            });
-            this.film.push(d);
-        });
-        this.films.push(this.film);
-    });
-    console.log(this.films);
+  getFilms(url: string){
+    return this.consumeApi(url);
   }
 
   consumeApi(url: string) {
