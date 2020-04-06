@@ -8,6 +8,8 @@ import { MyServiceService } from '../../../services/my-service.service';
 })
 export class HomeComponent implements OnInit {
 
+  prev: string;
+  next: string;
   personajes: any[] = [];
   planeta: any = {};
   peliculas: any[] = [];
@@ -17,9 +19,18 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.service.getPeople().subscribe(
+    this.people('https://swapi.co/api/people/');
+  }
+
+  people(url: string) {
+    window.scrollTo(0, 0);
+    this.service.getPeople(url).subscribe(
       (data) => {
+        this.prev = data.previous;
+        this.next = data.next;
         this.personajes = data.results;
+        console.log(this.prev);
+        console.log(this.next);
         console.log(this.personajes);
       },
       (error) => {

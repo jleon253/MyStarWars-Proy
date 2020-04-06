@@ -18,8 +18,8 @@ export class MyServiceService {
     // this.getPeople();
   }
 
-  getPeople(): any {
-    return this.consumeApi('https://swapi.co/api/people/');
+  getPeople(url: string): any {
+    return this.consumeApi(url);
   }
 
   getHomeWorld( url: string) {

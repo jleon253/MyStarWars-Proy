@@ -25,6 +25,20 @@
       </div>
     </div>
   </div>
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item" [ngClass]="{'disabled':prev===null}">
+        <button class="page-link" [disabled]="!prev" (click)="people(prev)" tabindex="-1" aria-disabled="true">Previous</button>
+      </li>
+      <li class="page-item" [ngClass]="{'disabled':next===null}">
+        <button class="page-link" [disabled]="!next" (click)="people(next)" tabindex="-1" aria-disabled="true">Next</button>
+      </li>
+    </ul>
+  </nav>
+
+
+
   <!-- Modal 1 -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
