@@ -15,7 +15,6 @@ export class MyServiceService {
 
   constructor(private http: HttpClient) {
     console.log('Servicio listo');
-    // this.getPeople();
   }
 
   getPeople(url: string): any {

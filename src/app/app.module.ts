@@ -14,6 +14,7 @@ import { InputFormComponent } from './components/molecules/input-form/input-form
 import { CheckboxComponent } from './components/atoms/checkbox/checkbox.component';
 import { AlertComponent } from './components/molecules/alert/alert.component';
 import { HomeComponent } from './components/organisms/home/home.component';
+import { IdResourcePipe } from './pipes/id-resource.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HomeComponent } from './components/organisms/home/home.component';
     InputFormComponent,
     CheckboxComponent,
     AlertComponent,
-    HomeComponent
+    HomeComponent,
+    IdResourcePipe
   ],
   imports: [
     BrowserModule,
