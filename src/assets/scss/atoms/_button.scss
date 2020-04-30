@@ -1,6 +1,29 @@
-.myButton{
-  font-weight: 600;
-  &:disabled{
+@mixin myBtn {
+  width: 100%;
+  height: 55px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  @include f-x-normal;
+  @include f-lato;
+  font-weight: 700;
+  transition: 0.3s all ease-out;
+}
+
+.myBtn__primary{
+  background-color: $c-primary;
+  color: $c-base;
+  @include myBtn();
+  &:hover{
+    background-color: lighten($c-primary, 15%);
+  }
+  &:active{
+    background-color: darken($c-primary, 15%);
+  }
+  &:disabled{    
+    background-color: transparentize($c-primary, 0.7);
+    border: 3px solid $c-primary;
+    color: $c-primary;
     cursor: not-allowed;
   }
 }

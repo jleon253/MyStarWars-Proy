@@ -1,0 +1,25 @@
+@mixin gradientBorder($c-from, $c-to) {
+  &::before{
+    z-index: -1;
+  }
+  &::after{
+    z-index: -2;
+  }
+  &::before,&::after{
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    right: -7px;
+    bottom: -7px;
+    background: #fff;
+    background: linear-gradient(180deg, $c-from, $c-base, $c-to);
+    border-radius: 5px;
+  }
+}
+
+@mixin blur($value) {
+  &::after{
+    filter: blur($value + px);
+  }
+}

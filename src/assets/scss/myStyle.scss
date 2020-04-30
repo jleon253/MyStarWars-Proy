@@ -1,9 +1,7 @@
-html{
-  font-size: 14px;
-}
-body{
-  background-color: #f2f2f2;
-}
+@import 'extra/fonts';
+@import 'extra/variables';
+@import 'extra/utilities';
+@import 'extra/effects';
 
 @import 'atoms/titles';
 @import 'atoms/button';
@@ -14,5 +12,12 @@ body{
 @import 'organisms/login';
 
 
-@import 'extra/fonts';
-@import 'extra/utilities';
+
+html{
+  font-size: 14px;
+  height: 100%;
+}
+body{
+  background-color: $c-base;
+  height: 100%;
+}

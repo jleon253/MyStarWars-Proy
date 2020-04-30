@@ -1,0 +1,55 @@
+<div class="row h-100">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-6 offset-lg-3 h-100 d-flex align-items-center">
+    <div class="myLogin blue-red--gradBorder border--blur my-3 mx-auto">
+      <form autocomplete="on" [formGroup]="myForm" (ngSubmit)="entry()">
+        <img src="assets/img/logo-star-wars.png" class="logo" alt="">
+        <p class="myText my-3 text-center">Conoce ambos lados de la fuerza</p>
+        <div class="myInput-group my-3" [class.error]="emailInvalid">
+          <label for=""
+            class="myInput__label">Email:</label>
+          <input type="email"
+            class="myInput"
+            placeholder="ejemplo@mail.com"
+            formControlName="email">
+          <span class="myInput__help" *ngIf="myForm.get('email').errors && emailInvalid">
+            <div *ngIf="myForm.get('email').errors.required">
+              Este campo es requerido
+            </div>
+            <div *ngIf="myForm.get('email').errors.pattern">
+              Debes ingresar algo como: ejemplo@mail.com
+            </div>
+          </span>
+        </div>
+        <div class="myInput-group my-3" [class.error]="passInvalid">
+          <label for=""
+            class="myInput__label">Contraseña:</label>
+          <input type="password"
+            class="myInput"
+            placeholder="***Abc@123***"
+            formControlName="pass">
+          <div *ngIf="myForm.get('pass').errors">
+            <span class="myInput__help float-left" *ngIf="myForm.get('pass').errors && passInvalid">
+              <div *ngIf="myForm.get('pass').errors.required">
+                Este campo es requerido
+              </div>
+              <div *ngIf="myForm.get('pass').errors.minlength">
+                Ingresa {{myForm.get('pass').errors.minlength.requiredLength}} o más caracteres
+              </div>
+            </span>
+            <div *ngIf="myForm.get('pass').errors.minlength" class="float-right text-light">
+              {{myForm.get('pass').errors.minlength.actualLength}} / {{myForm.get('pass').errors.minlength.requiredLength}}
+            </div>
+          </div>
+        </div>
+        <button type="submit"
+          class="myBtn__primary my-3" [disabled]="disabled">
+          <span *ngIf="!disabled">Ingresa ahora</span>
+          <span *ngIf="disabled">Ingresando...</span>
+        </button>
+      </form>
+      <p class="myText my-3">Data tomada de <a href="#"
+          class="myLink">SWAPI</a></p>
+
+    </div>
+  </div>
+</div>

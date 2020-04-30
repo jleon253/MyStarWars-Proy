@@ -1,66 +1,35 @@
-$c-dark: #474747;
-
-.row-login{
-  height: 100vh;
-  color: $c-dark;
-}
-
-.block-login{
-  display: flex;
-  flex-direction: column;
+.myLogin{
+  width: 90%;
+  height: 80%;
+  max-height: 90%;
+  min-height: 70%;
+  position: relative;
+  @include d-flex-c;
+  justify-content: center;
   align-items: center;
-  width: 35%;
-  background-color: white;
-  border: 1px solid #d1d1d1;
-  border-radius: 10px;
-  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.2);
-  .block-login__content{
-    padding: 30px 20px 0px 20px;
+  padding: 60px 0px;
+  background: #060c21;
+  box-sizing: border-box;
+  border-radius: 5px;
+  form{
     width: 70%;
-    display: flex;
-    flex-direction: column;
+    min-width: 65%;
+    max-width: 75%;
+    @include d-flex-c;
     justify-content: center;
     align-items: center;
   }
-  .block-login__button{
+  .logo{
     width: 150px;
-    display: block;
-    margin: auto;
-  }
-  .block-login__borderSvg{
-    // transform: scale(1.78) translate(0.3px, 4px);
-    transform: translate(0px, -5px);
-    width: 100%;
   }
 }
 
-.block-links{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 30%;
-  margin: 20px auto;
-  text-align: center;
+.blue-red--gradBorder{
+  @include gradientBorder($c-light-side, $c-dark-side);
 }
 
-.block-copyright{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 40%;
-  margin: auto;
-  text-align: center;
-  .block-copyright__icon{
-    background-color: $c-dark;
-    color: white;
-    width: 10%;
-    font-size: 16px;
-  }
-  .block-copyright__name{
-    background-color: white;
-    color: $c-dark;
-    width: 90%;
-    padding: 5px 20px;
-    font-size: 12px;
-  }
+.border--blur{
+  @include blur(15);
 }
+
+

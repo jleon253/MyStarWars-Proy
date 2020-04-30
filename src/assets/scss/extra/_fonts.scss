@@ -1,15 +1,31 @@
-input, p, a, label, span, .block-copyright{
+@mixin f-lato {
   font-family: 'Lato', sans-serif;
 }
 
-.myInput__label, .title, .btn{
-  font-family: 'Open Sans', sans-serif;
+@mixin f-roboto {
+  font-family: 'Roboto', sans-serif;
 }
 
-.myFont__small{
+@mixin f-bigger {
+  font-size: 20px;
+}
+
+@mixin f-big {
+  font-size: 18px;
+}
+
+@mixin f-x-normal {
+  font-size: 16px;
+}
+
+@mixin f-normal {
   font-size: 14px;
 }
 
-.myFont__smaller{
+@mixin f-small {
   font-size: 12px;
+}
+
+@mixin f-smaller {
+  font-size: 10px;
 }

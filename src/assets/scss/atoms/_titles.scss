@@ -1,0 +1,19 @@
+.myText{
+  color: #fff;
+  @include f-roboto;
+  @include f-normal;
+  font-weight: 400;
+}
+
+.myLink{
+  color: $c-primary;
+  text-decoration: none;
+  @include f-roboto;
+  @include f-normal;
+  font-weight: 400;
+  transition: 0.5 all ease-out;
+  &:hover{
+    color: $c-primary;
+    text-decoration: underline;
+  }
+}

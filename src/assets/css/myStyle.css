@@ -1,44 +1,137 @@
-/* line 1, assets/scss/myStyle.scss */
-html {
+/* line 1, assets/scss/atoms/_titles.scss */
+.myText {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
+  font-weight: 400;
 }
 
-/* line 4, assets/scss/myStyle.scss */
-body {
-  background-color: #f2f2f2;
+/* line 8, assets/scss/atoms/_titles.scss */
+.myLink {
+  color: #FDC502;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  transition: 0.5 all ease-out;
 }
 
-/* line 1, assets/scss/atoms/_button.scss */
-.myButton {
-  font-weight: 600;
+/* line 15, assets/scss/atoms/_titles.scss */
+.myLink:hover {
+  color: #FDC502;
+  text-decoration: underline;
 }
 
-/* line 3, assets/scss/atoms/_button.scss */
-.myButton:disabled {
+/* line 13, assets/scss/atoms/_button.scss */
+.myBtn__primary {
+  background-color: #FDC502;
+  color: #060C21;
+  width: 100%;
+  height: 55px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  transition: 0.3s all ease-out;
+}
+
+/* line 17, assets/scss/atoms/_button.scss */
+.myBtn__primary:hover {
+  background-color: #fed64e;
+}
+
+/* line 20, assets/scss/atoms/_button.scss */
+.myBtn__primary:active {
+  background-color: #b18a01;
+}
+
+/* line 23, assets/scss/atoms/_button.scss */
+.myBtn__primary:disabled {
+  background-color: rgba(253, 197, 2, 0.3);
+  border: 3px solid #FDC502;
+  color: #FDC502;
   cursor: not-allowed;
 }
 
 /* line 1, assets/scss/atoms/_input.scss */
-.myInput {
-  color: black;
+.myInput-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s all ease-out;
 }
 
-/* line 3, assets/scss/atoms/_input.scss */
-.myInput::-webkit-input-placeholder {
-  font-style: italic;
-  color: #c2c2c2;
+/* line 5, assets/scss/atoms/_input.scss */
+.myInput-group .myInput__label {
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
 }
-.myInput::-moz-placeholder {
-  font-style: italic;
-  color: #c2c2c2;
+
+/* line 11, assets/scss/atoms/_input.scss */
+.myInput-group .myInput {
+  height: 45px;
+  padding: 10px;
+  color: #fff;
+  background-color: #060C21;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  transition: 0.3s all ease-out;
 }
-.myInput::-ms-input-placeholder {
+
+/* line 21, assets/scss/atoms/_input.scss */
+.myInput-group .myInput::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Roboto', sans-serif;
   font-style: italic;
-  color: #c2c2c2;
 }
-.myInput::placeholder {
+.myInput-group .myInput::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Roboto', sans-serif;
   font-style: italic;
-  color: #c2c2c2;
+}
+.myInput-group .myInput::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+}
+.myInput-group .myInput::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+}
+
+/* line 26, assets/scss/atoms/_input.scss */
+.myInput-group .myInput:focus {
+  border-color: #FDC502;
+}
+
+/* line 30, assets/scss/atoms/_input.scss */
+.myInput-group .myInput__help {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 3px;
+}
+
+/* line 37, assets/scss/atoms/_input.scss */
+.myInput-group.error .myInput__label {
+  color: #F00000;
+}
+
+/* line 40, assets/scss/atoms/_input.scss */
+.myInput-group.error .myInput {
+  border-color: #F00000;
+}
+
+/* line 43, assets/scss/atoms/_input.scss */
+.myInput-group.error .myInput__help {
+  color: #F00000;
 }
 
 /* line 2, assets/scss/molecules/_alert.scss */
@@ -47,105 +140,76 @@ body {
   align-items: center;
 }
 
-/* line 3, assets/scss/organisms/_login.scss */
-.row-login {
-  height: 100vh;
-  color: #474747;
-}
-
-/* line 8, assets/scss/organisms/_login.scss */
-.block-login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 35%;
-  background-color: white;
-  border: 1px solid #d1d1d1;
-  border-radius: 10px;
-  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
-}
-
-/* line 17, assets/scss/organisms/_login.scss */
-.block-login .block-login__content {
-  padding: 30px 20px 0px 20px;
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* line 25, assets/scss/organisms/_login.scss */
-.block-login .block-login__button {
-  width: 150px;
-  display: block;
-  margin: auto;
-}
-
-/* line 30, assets/scss/organisms/_login.scss */
-.block-login .block-login__borderSvg {
-  transform: translate(0px, -5px);
-  width: 100%;
-}
-
-/* line 37, assets/scss/organisms/_login.scss */
-.block-links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 30%;
-  margin: 20px auto;
-  text-align: center;
-}
-
-/* line 46, assets/scss/organisms/_login.scss */
-.block-copyright {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 40%;
-  margin: auto;
-  text-align: center;
-}
-
-/* line 53, assets/scss/organisms/_login.scss */
-.block-copyright .block-copyright__icon {
-  background-color: #474747;
-  color: white;
-  width: 10%;
-  font-size: 16px;
-}
-
-/* line 59, assets/scss/organisms/_login.scss */
-.block-copyright .block-copyright__name {
-  background-color: white;
-  color: #474747;
+/* line 1, assets/scss/organisms/_login.scss */
+.myLogin {
   width: 90%;
-  padding: 5px 20px;
-  font-size: 12px;
+  height: 80%;
+  max-height: 90%;
+  min-height: 70%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0px;
+  background: #060c21;
+  box-sizing: border-box;
+  border-radius: 5px;
 }
 
-/* line 1, assets/scss/extra/_fonts.scss */
-input, p, a, label, span, .block-copyright {
-  font-family: 'Lato', sans-serif;
+/* line 14, assets/scss/organisms/_login.scss */
+.myLogin form {
+  width: 70%;
+  min-width: 65%;
+  max-width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* line 5, assets/scss/extra/_fonts.scss */
-.myInput__label, .title, .btn {
-  font-family: 'Open Sans', sans-serif;
+/* line 22, assets/scss/organisms/_login.scss */
+.myLogin .logo {
+  width: 150px;
 }
 
-/* line 9, assets/scss/extra/_fonts.scss */
-.myFont__small {
+/* line 2, assets/scss/extra/_effects.scss */
+.blue-red--gradBorder::before {
+  z-index: -1;
+}
+
+/* line 5, assets/scss/extra/_effects.scss */
+.blue-red--gradBorder::after {
+  z-index: -2;
+}
+
+/* line 8, assets/scss/extra/_effects.scss */
+.blue-red--gradBorder::before, .blue-red--gradBorder::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  right: -7px;
+  bottom: -7px;
+  background: #fff;
+  background: linear-gradient(180deg, #2196f3, #060C21, #F00000);
+  border-radius: 5px;
+}
+
+/* line 22, assets/scss/extra/_effects.scss */
+.border--blur::after {
+  -webkit-filter: blur(15px);
+          filter: blur(15px);
+}
+
+/* line 16, assets/scss/myStyle.scss */
+html {
   font-size: 14px;
+  height: 100%;
 }
 
-/* line 13, assets/scss/extra/_fonts.scss */
-.myFont__smaller {
-  font-size: 12px;
-}
-
-/* line 1, assets/scss/extra/_utilities.scss */
-.error {
-  border: 2px solid red;
+/* line 20, assets/scss/myStyle.scss */
+body {
+  background-color: #060C21;
+  height: 100%;
 }

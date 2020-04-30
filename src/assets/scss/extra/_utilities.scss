@@ -1,3 +1,9 @@
-.error{
-  border: 2px solid red;
+@mixin d-flex-c {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin d-flex-r {
+  display: flex;
+  flex-direction: row;
 }

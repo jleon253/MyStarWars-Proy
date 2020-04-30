@@ -1,7 +1,48 @@
-.myInput{
-  color: black;
-  &::placeholder{
+.myInput-group{
+  width: 100%;
+  @include d-flex-c;
+  transition: 0.3s all ease-out;
+  .myInput__label{
+    color: #fff;
+    @include f-lato;
+    @include f-x-normal;
+    font-weight: 700;
+  }
+  .myInput{
+    height: 45px;
+    padding: 10px;
+    color: #fff;
+    background-color: $c-base;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    @include f-roboto;
+    @include f-normal;
+    transition: 0.3s all ease-out;
+    &::placeholder{
+      color: transparentize(#fff, 0.5);
+      @include f-roboto;
+      font-style: italic;
+    }
+    &:focus{
+      border-color: $c-primary;
+    }
+  }
+  .myInput__help{
+    @include f-roboto;
     font-style: italic;
-    color: #c2c2c2;
+    color: transparentize(#fff, 0.5);
+    margin-top: 3px;
+  }
+  &.error{
+    .myInput__label{
+      color: $c-dark-side;
+    }
+    .myInput{
+      border-color: $c-dark-side;
+    }
+    .myInput__help{
+      color: $c-dark-side;
+    }
+
   }
 }
