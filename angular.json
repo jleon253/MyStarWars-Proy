@@ -25,7 +25,8 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/assets/css/myStyle.css"
+              "src/assets/css/myStyle.css",
+              "src/assets/css/animate.css"
             ],
             "scripts": []
           },

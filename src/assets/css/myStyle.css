@@ -140,6 +140,11 @@
   align-items: center;
 }
 
+/* line 1, assets/scss/molecules/_navbar.scss */
+.myNavbar {
+  font-family: 'Lato', sans-serif;
+}
+
 /* line 1, assets/scss/organisms/_login.scss */
 .myLogin {
   width: 90%;
@@ -202,13 +207,13 @@
           filter: blur(15px);
 }
 
-/* line 16, assets/scss/myStyle.scss */
+/* line 17, assets/scss/myStyle.scss */
 html {
   font-size: 14px;
   height: 100%;
 }
 
-/* line 20, assets/scss/myStyle.scss */
+/* line 21, assets/scss/myStyle.scss */
 body {
   background-color: #060C21;
   height: 100%;
