@@ -1,3 +1,4 @@
+@import 'extra/media';
 @import 'extra/fonts';
 @import 'extra/variables';
 @import 'extra/utilities';
@@ -9,6 +10,7 @@
 
 @import 'molecules/alert';
 @import 'molecules/navbar';
+@import 'molecules/search';
 
 @import 'organisms/login';
 

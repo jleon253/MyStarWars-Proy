@@ -1,0 +1,19 @@
+.mySearch{
+  width: 100%;
+  margin: 10px auto;
+  @include bkp-small{
+    width: 60%;
+  }
+  @include bkp-medium{
+    width: 60%;
+  }
+  @include bkp-large{
+    width: 40%;
+  }
+  @include bkp-xlarge{
+    width: 40%;
+  }
+  .myBtn__primary{
+    @include f-small;
+  }
+}
