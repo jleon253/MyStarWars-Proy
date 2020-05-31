@@ -17,3 +17,11 @@
     text-decoration: underline;
   }
 }
+
+.mySubtitle{
+  color: #fff;
+  @include f-roboto;
+  @include f-x-normal;
+  font-weight: 600;
+  text-transform: uppercase;
+}

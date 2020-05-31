@@ -1,0 +1,16 @@
+.separator{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px 0px;
+  .mySubtitle{
+    margin-bottom: 10px;
+    &::after{
+      content: ':';
+    }
+  }
+  .line{
+    width: 100%;
+    @include borderShadow($c-green);
+  }
+}

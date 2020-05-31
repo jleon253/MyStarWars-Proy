@@ -1,0 +1,52 @@
+.myCard{
+  transition: 0.5s all ease-out;
+  .box{
+    border-radius: 5px;
+    @include d-flex-r;
+    padding: 3px;
+    margin: 20px 5px;
+  }
+  &:nth-child(odd) > .box{
+    @include borderShadow($c-light-side);
+  }
+  &:nth-child(even) > .box{
+    @include borderShadow($c-dark-side);
+  }
+  &:hover{
+    transform: scale(1.1);
+  }
+  .info,.photo{
+    margin: 3px;
+  }
+  .info{
+    width: 60%;
+    @include d-flex-c;
+    .title, .action{
+      @include d-flex-r;
+    }
+    .title{
+      background-color: $c-base-l1;
+      height: 50%;
+      color: #fff;
+      justify-content: center;
+      align-items: flex-end;
+      word-break: break-word;
+      text-align: center;
+    }
+    .action{
+      height: 50%;
+      padding: 5px;
+      align-items: center;
+      .myBtn__primary{
+        @include f-small;
+        height: 35px;
+      }
+    }
+  }
+  .photo{
+    width: 40%;
+    img{
+      width: 100%;
+    }
+  }
+} 

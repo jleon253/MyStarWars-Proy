@@ -3,6 +3,34 @@
   border-radius: 0px !important;
 }
 
+@-webkit-keyframes lightSaber {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes lightSaber {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* line 10, assets/scss/extra/_myAnimactions.scss */
+.lightSaber {
+  -webkit-animation-name: lightSaber;
+          animation-name: lightSaber;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
 /* line 1, assets/scss/atoms/_titles.scss */
 .myText {
   color: #fff;
@@ -25,6 +53,15 @@
 .myLink:hover {
   color: #FDC502;
   text-decoration: underline;
+}
+
+/* line 21, assets/scss/atoms/_titles.scss */
+.mySubtitle {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 /* line 13, assets/scss/atoms/_button.scss */
@@ -189,6 +226,114 @@
   font-size: 12px;
 }
 
+/* line 1, assets/scss/molecules/_separator.scss */
+.separator {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px 0px;
+}
+
+/* line 6, assets/scss/molecules/_separator.scss */
+.separator .mySubtitle {
+  margin-bottom: 10px;
+}
+
+/* line 8, assets/scss/molecules/_separator.scss */
+.separator .mySubtitle::after {
+  content: ':';
+}
+
+/* line 12, assets/scss/molecules/_separator.scss */
+.separator .line {
+  width: 100%;
+  border: 2px solid #2DD100;
+  box-shadow: 0px 0px 10px 1px #2DD100;
+}
+
+/* line 1, assets/scss/molecules/_tarjeta.scss */
+.myCard {
+  transition: 0.5s all ease-out;
+}
+
+/* line 3, assets/scss/molecules/_tarjeta.scss */
+.myCard .box {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  padding: 3px;
+  margin: 20px 5px;
+}
+
+/* line 9, assets/scss/molecules/_tarjeta.scss */
+.myCard:nth-child(odd) > .box {
+  border: 2px solid #2196f3;
+  box-shadow: 0px 0px 10px 1px #2196f3;
+}
+
+/* line 12, assets/scss/molecules/_tarjeta.scss */
+.myCard:nth-child(even) > .box {
+  border: 2px solid #F00000;
+  box-shadow: 0px 0px 10px 1px #F00000;
+}
+
+/* line 15, assets/scss/molecules/_tarjeta.scss */
+.myCard:hover {
+  transform: scale(1.1);
+}
+
+/* line 18, assets/scss/molecules/_tarjeta.scss */
+.myCard .info, .myCard .photo {
+  margin: 3px;
+}
+
+/* line 21, assets/scss/molecules/_tarjeta.scss */
+.myCard .info {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 24, assets/scss/molecules/_tarjeta.scss */
+.myCard .info .title, .myCard .info .action {
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 27, assets/scss/molecules/_tarjeta.scss */
+.myCard .info .title {
+  background-color: #252A3D;
+  height: 50%;
+  color: #fff;
+  justify-content: center;
+  align-items: flex-end;
+  word-break: break-word;
+  text-align: center;
+}
+
+/* line 36, assets/scss/molecules/_tarjeta.scss */
+.myCard .info .action {
+  height: 50%;
+  padding: 5px;
+  align-items: center;
+}
+
+/* line 40, assets/scss/molecules/_tarjeta.scss */
+.myCard .info .action .myBtn__primary {
+  font-size: 12px;
+  height: 35px;
+}
+
+/* line 46, assets/scss/molecules/_tarjeta.scss */
+.myCard .photo {
+  width: 40%;
+}
+
+/* line 48, assets/scss/molecules/_tarjeta.scss */
+.myCard .photo img {
+  width: 100%;
+}
+
 /* line 1, assets/scss/organisms/_login.scss */
 .myLogin {
   width: 90%;
@@ -251,13 +396,13 @@
           filter: blur(15px);
 }
 
-/* line 19, assets/scss/myStyle.scss */
+/* line 22, assets/scss/myStyle.scss */
 html {
   font-size: 14px;
   height: 100%;
 }
 
-/* line 23, assets/scss/myStyle.scss */
+/* line 26, assets/scss/myStyle.scss */
 body {
   background-color: #060C21;
   height: 100%;
