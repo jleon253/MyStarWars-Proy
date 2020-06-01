@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
     } else
     {
       this.disabled = true;
-      this.router.navigate(['/principal']);
+      this.router.navigate(['/main']);
     }
   }
 

@@ -12,24 +12,25 @@ export class MyServiceService {
   films: any[] = [];
   film: any[] = [];
   respuesta: boolean;
+  urlBase = 'http://swapi.dev/api';
 
   constructor(private http: HttpClient) {
     console.log('Servicio listo');
   }
 
-  getPeople(url: string): any {
-    return this.consumeApi(url);
+  getPeople(parametro: string): any {
+    return this.consumeApi(parametro);
   }
 
-  getHomeWorld( url: string) {
-    return this.consumeApi(url);
+  getHomeWorld( parametro: string) {
+    return this.consumeApi(parametro);
   }
 
-  getFilms(url: string){
-    return this.consumeApi(url);
+  getFilms(parametro: string){
+    return this.consumeApi(parametro);
   }
 
-  consumeApi(url: string) {
-    return this.http.get(url);
+  consumeApi(parametro: string) {
+    return this.http.get(`${this.urlBase}${parametro}`);
   }
 }

@@ -1,15 +1,49 @@
-<div class="separator animated fadeIn">
-  <div class="mySubtitle">
-    personajes
+<div class="row">
+  <div class="col-12" *ngIf="!esperar">
+    <app-search></app-search>
   </div>
-  <div class="line lightSaber"></div>
+  <div class="col-12">
+    <div class="separator animated fadeIn" *ngIf="!esperar">
+      <div class="mySubtitle">
+        personajes ({{ cantidad }})
+      </div>
+      <div class="line lightSaber"></div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <app-spinner *ngIf="esperar" class="d-block mx-auto"></app-spinner>
+        <app-tarjeta class="col-3 myCard" *ngFor="let person of people" [dato]="person" [tipo]="'people'" [urlElemento]="person.url"></app-tarjeta>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mt-4" *ngIf="!esperar">
+  <div class="col-6">
+    <button type="button" class="btn btn-outline-light w-50 d-block mx-auto" *ngIf="anteriorPag !== null" (click)="verAnterior()">Anterior</button>
+  </div>
+  <div class="col-6">
+    <button type="button" class="btn btn-outline-light w-50 d-block mx-auto" *ngIf="siguientePag !== null" (click)="verSiguiente()">Siguiente</button>
+  </div>
 </div>
 
-<div class="container-fluid">
-  <div class="row">
-    <app-tarjeta class="col-3 myCard"></app-tarjeta>
-    <app-tarjeta class="col-3 myCard"></app-tarjeta>
-    <app-tarjeta class="col-3 myCard"></app-tarjeta>
-    <app-tarjeta class="col-3 myCard"></app-tarjeta>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
   </div>
 </div>
+
