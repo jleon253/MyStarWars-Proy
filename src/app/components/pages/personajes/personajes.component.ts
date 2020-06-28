@@ -15,6 +15,7 @@ export class PersonajesComponent implements OnInit {
   cantidad = '';
   cantidadTotal = 0;
   esperar = true;
+  personSeleccionado: Person;
 
   constructor(private ms: MyServiceService) {
     this.consultarPersonajes('/people');
@@ -35,34 +36,36 @@ export class PersonajesComponent implements OnInit {
           this.cantidad = this.calcularCantidad();
           this.esperar = false;
         }, 1000);
-
       });
   }
 
-  verAnterior() {
+  cambiarPagina(direccion: string) {
+    let pag = '';
     this.esperar = true;
     this.people = [];
     window.scroll(0, 0);
+    if (direccion === 'anterior') {
+      pag = this.anteriorPag;
+    }
+    if (direccion === 'siguiente') {
+      pag = this.siguientePag;
+    }
     setTimeout(() => {
       this.consultarPersonajes(
-        this.anteriorPag
+        pag
           .split(`${this.ms.urlBase}`)
           .filter((el) => el !== '')
-          .toString());
+          .toString()
+      );
     }, 1000);
   }
 
+  verAnterior() {
+    this.cambiarPagina('anterior');
+  }
+
   verSiguiente() {
-    this.esperar = true;
-    this.people = [];
-    window.scroll(0, 0);
-    setTimeout(() => {
-      this.consultarPersonajes(
-        this.siguientePag
-          .split(`${this.ms.urlBase}`)
-          .filter((el) => el !== '')
-          .toString());
-    }, 1000);
+    this.cambiarPagina('siguiente');
   }
 
   calcularCantidad() {
@@ -71,11 +74,25 @@ export class PersonajesComponent implements OnInit {
     if (this.siguientePag) {
       // http://swapi.dev/api/people/?page=1
       vistaActual = this.siguientePag.split('=')[1];
-      cantidadActual = (parseInt(vistaActual) - 1) * this.people.length;
+      cantidadActual = (parseInt(vistaActual, 10) - 1) * this.people.length;
     } else {
       vistaActual = `${this.cantidadTotal}`;
-      cantidadActual = parseInt(vistaActual);
+      cantidadActual = parseInt(vistaActual, 10);
     }
     return `${cantidadActual} / ${this.cantidadTotal}`;
+  }
+
+  personajeSeleccionado(personaje: Person) {
+    this.personSeleccionado = personaje;
+  }
+
+  imagenPersonaje(){
+    return this.ms.getImagen('people', this.personSeleccionado.url)
+  }
+
+  personajeBuscado(valor: string) {
+    this.people = [];
+    this.esperar = true;
+    this.consultarPersonajes(`/people/?search=${valor}`);
   }
 }

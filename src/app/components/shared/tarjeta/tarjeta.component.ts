@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { MyServiceService } from '../../../services/my-service.service';
+import { PeopleResponse, Person } from '../../../models/people.model';
 
 @Component({
   selector: 'app-tarjeta',
@@ -7,31 +9,27 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TarjetaComponent implements OnInit {
 
-  @Input() dato = {};
+  @Input() personaje: Person;
   @Input() tipo = '';
   @Input() urlElemento = '';
+  @Output() personSeleccionado = new EventEmitter<object>();
   titulo = '';
   urlImagen = '';
 
-  constructor() {
+  constructor(private ms: MyServiceService) {
   }
 
   ngOnInit() {
     if (this.tipo) {
       if (this.tipo === 'people') {
-        this.titulo = this.dato['name'];
-        this.urlImagen = `${this.tipo}/${this.generarId()}`;
+        this.titulo = this.personaje.name;
+        this.urlImagen = this.ms.getImagen(this.tipo, this.urlElemento);
       }
     }
   }
 
-  generarId(): string {
-    let id = '';
-    if (this.urlElemento) {
-      const urlArray = this.urlElemento.split('/').filter((el) => el !== '');
-      id = urlArray[urlArray.length - 1];
-    }
-    return id;
+  mostrarInfo() {
+    this.personSeleccionado.emit(this.personaje);
   }
 
 }

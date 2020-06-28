@@ -1,0 +1,9 @@
+{
+  "emmet.triggerExpansionOnTab": false,
+  "emmet.showExpandedAbbreviation": "never",
+  "emmet.excludeLanguages": [
+
+    "markdown"
+  ],
+  "emmet.showAbbreviationSuggestions": false
+}

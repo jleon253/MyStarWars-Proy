@@ -33,4 +33,13 @@ export class MyServiceService {
   consumeApi(parametro: string) {
     return this.http.get(`${this.urlBase}${parametro}`);
   }
+
+  getImagen(tipo: string, urlElemento: string){
+    let id = '';
+    if (urlElemento) {
+      const urlArray = urlElemento.split('/').filter((el) => el !== '');
+      id = urlArray[urlArray.length - 1];
+    }
+    return `${tipo}/${id}`;
+  }
 }

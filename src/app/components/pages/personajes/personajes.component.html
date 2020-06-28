@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12" *ngIf="!esperar">
-    <app-search></app-search>
+    <app-search [placeholder]="'Darth Vader'" (busqueda)="personajeBuscado($event)"></app-search>
   </div>
   <div class="col-12">
     <div class="separator animated fadeIn" *ngIf="!esperar">
@@ -12,7 +12,8 @@
     <div class="container-fluid">
       <div class="row">
         <app-spinner *ngIf="esperar" class="d-block mx-auto"></app-spinner>
-        <app-tarjeta class="col-3 myCard" *ngFor="let person of people" [dato]="person" [tipo]="'people'" [urlElemento]="person.url"></app-tarjeta>
+        <app-tarjeta class="col-12 col-sm-12 col-md-4 col-lg-3 myCard" *ngFor="let person of people" [personaje]="person" [tipo]="'people'" [urlElemento]="person.url" (personSeleccionado)="personajeSeleccionado($event)"></app-tarjeta>
+        <app-alert *ngIf="people.length === 0 && !esperar" [msg]="'Personaje no encontrado'" class="mx-auto my-3 animated fadeIn"></app-alert>
       </div>
     </div>
   </div>
@@ -27,21 +28,39 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div *ngIf="personSeleccionado !== undefined" class="modal fade myModal" [id]="personSeleccionado.name.replace(' ', '')"  tabindex="-1" role="dialog" [attr.aria-labelledby]="personSeleccionado.name" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{ personSeleccionado.name }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <div class="row">
+          <section class="info-p col-12 order-2 col-sm-12 order-sm-2 col-md-8 order-md-1 col-lg-8 order-lg-1 overflow-auto">
+            <p class="subtitle">Información</p>
+            <ul class="list-group">
+              <li class="list-group-item"><b>Altura:</b> {{ personSeleccionado.height }} cm</li>
+              <li class="list-group-item"><b>Peso:</b> {{ personSeleccionado.mass }} kg</li>
+              <li class="list-group-item"><b>Color de cabello:</b> {{ personSeleccionado.hair_color }}</li>
+              <li class="list-group-item"><b>Color de piel:</b> {{ personSeleccionado.skin_color }}</li>
+              <li class="list-group-item"><b>Color de ojos:</b> {{ personSeleccionado.eye_color }}</li>
+              <li class="list-group-item"><b>Año de nacimiento:</b> {{ personSeleccionado.birth_year }}</li>
+              <li class="list-group-item"><b>Genero:</b> {{ personSeleccionado.gender }}</li>
+            </ul>
+          </section>
+          <section class="info-s col-12 order-1 col-sm-12 order-sm-1 col-md-4 order-md-2 col-lg-4 order-lg-2">
+            <figure>
+              <img src="/assets/img/full/{{ imagenPersonaje() }}.jpg" class="img-fluid" />
+            </figure>
+            <button type="button" class="myBtn__primary">Sus peliculas</button>
+            <button type="button" class="myBtn__primary my-3">Planetas visitados</button>
+          </section>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

@@ -4,7 +4,7 @@
         <span>{{ titulo }}</span>
       </div>
       <div class="action">
-        <button type="button" class="myBtn__primary" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" class="myBtn__primary" (click)="mostrarInfo()" data-toggle="modal" [attr.data-target]="'#'+personaje.name.replace(' ','')">
           Mostrar Info
         </button>
       </div>

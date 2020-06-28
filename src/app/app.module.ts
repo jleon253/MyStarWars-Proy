@@ -15,6 +15,7 @@ import { PeliculasComponent } from './components/pages/peliculas/peliculas.compo
 import { TarjetaComponent } from './components/shared/tarjeta/tarjeta.component';
 import { MainComponent } from './components/main/main.component';
 import { SpinnerComponent } from './components/shared/spinner/spinner.component';
+import { AlertComponent } from './components/shared/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SpinnerComponent } from './components/shared/spinner/spinner.component'
     TarjetaComponent,
     MainComponent,
     SpinnerComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,

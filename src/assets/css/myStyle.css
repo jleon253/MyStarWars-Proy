@@ -21,7 +21,7 @@
   }
 }
 
-/* line 10, assets/scss/extra/_myAnimactions.scss */
+/* line 10, assets/scss/extra/_myAnimations.scss */
 .lightSaber {
   -webkit-animation-name: lightSaber;
           animation-name: lightSaber;
@@ -127,11 +127,6 @@
 }
 
 /* line 21, assets/scss/atoms/_input.scss */
-.myInput-group .myInput::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
-  font-family: 'Roboto', sans-serif;
-  font-style: italic;
-}
 .myInput-group .myInput::-moz-placeholder {
   color: rgba(255, 255, 255, 0.5);
   font-family: 'Roboto', sans-serif;
@@ -396,13 +391,53 @@
           filter: blur(15px);
 }
 
-/* line 22, assets/scss/myStyle.scss */
+@media screen and (min-width: 576px) {
+  /* line 2, assets/scss/organisms/_modal.scss */
+  .myModal .modal-dialog {
+    max-width: 700px;
+  }
+}
+
+/* line 6, assets/scss/organisms/_modal.scss */
+.myModal .modal-dialog .modal-content {
+  background-color: #444959;
+}
+
+/* line 8, assets/scss/organisms/_modal.scss */
+.myModal .modal-dialog .modal-content .modal-header {
+  background-color: #252a3d;
+  color: white;
+  border: none;
+}
+
+/* line 12, assets/scss/organisms/_modal.scss */
+.myModal .modal-dialog .modal-content .modal-header button.close {
+  color: #fff;
+}
+
+/* line 17, assets/scss/organisms/_modal.scss */
+.myModal .modal-dialog .modal-content .modal-body .subtitle {
+  color: #fff;
+}
+
+/* line 21, assets/scss/organisms/_modal.scss */
+.myModal .modal-dialog .modal-content .modal-body .info-s button.myBtn__primary {
+  font-size: 12px;
+  height: 35px;
+}
+
+/* line 27, assets/scss/organisms/_modal.scss */
+.myModal .modal-dialog .modal-content .modal-footer {
+  border: none;
+}
+
+/* line 23, assets/scss/myStyle.scss */
 html {
   font-size: 14px;
   height: 100%;
 }
 
-/* line 26, assets/scss/myStyle.scss */
+/* line 27, assets/scss/myStyle.scss */
 body {
   background-color: #060C21;
   height: 100%;

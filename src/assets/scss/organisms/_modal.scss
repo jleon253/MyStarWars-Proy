@@ -1,0 +1,33 @@
+.myModal{
+  .modal-dialog{
+    @media screen and (min-width: 576px){
+      max-width: 700px;
+    }
+    .modal-content{
+      background-color: #444959;
+      .modal-header{
+        background-color: #252a3d;
+        color: white;
+        border: none;
+        button.close{
+          color: #fff;
+        }
+      }
+      .modal-body{
+        .subtitle{
+          color: #fff;
+        }
+        .info-s{
+          button.myBtn__primary{
+            font-size: 12px;
+            height: 35px;
+          }
+        }
+      }
+      .modal-footer{
+        border: none;
+
+      }
+    }
+  }
+}
