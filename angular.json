@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "MyStarWars": {
+    "MyStarWars-Proy": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,12 +13,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/MyStarWars",
+            "outputPath": "dist/MyStarWars-Proy",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -43,7 +43,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -65,18 +64,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "MyStarWars:build"
+            "browserTarget": "MyStarWars-Proy:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "MyStarWars:build:production"
+              "browserTarget": "MyStarWars-Proy:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "MyStarWars:build"
+            "browserTarget": "MyStarWars-Proy:build"
           }
         },
         "test": {
@@ -113,15 +112,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "MyStarWars:serve"
+            "devServerTarget": "MyStarWars-Proy:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "MyStarWars:serve:production"
+              "devServerTarget": "MyStarWars-Proy:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "MyStarWars"
+  "defaultProject": "MyStarWars-Proy"
 }
