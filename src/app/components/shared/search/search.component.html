@@ -1,8 +1,9 @@
 <form autocomplete="on"
   [formGroup]="myFormSearch"
   (ngSubmit)="buscar()"
-  class="mySearch d-flex flex-row align-items-end animated fadeInDown">
-  <div class="myInput-group w-75">
+  class="mySearch animated fadeInDown">
+  <div class="myInput-group"
+    [class.error]="busquedaNoValido">
     <label for=""
       class="myInput__label">Escribe un nombre:</label>
     <input type="text"
@@ -12,9 +13,15 @@
       aria-label="Recipient's username"
       aria-describedby="button-addon2">
   </div>
-  <div class="w-25">
+  <div class="">
     <button style="height: 45px;"
       class="myBtn__primary b-radius-0"
       type="submit">Buscar</button>
   </div>
+  <small class="myInput__help text-danger"
+    *ngIf="myFormSearch.get('busqueda').errors && busquedaNoValido">
+    <div *ngIf="myFormSearch.get('busqueda').errors.required">Este campo es requerido</div>
+    <div *ngIf="myFormSearch.get('busqueda').errors.minlength">Escribe más de
+      {{myFormSearch.get('busqueda').errors.minlength.requiredLength}} letras</div>
+  </small>
 </form>

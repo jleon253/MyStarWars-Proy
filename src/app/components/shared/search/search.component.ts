@@ -19,6 +19,10 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
+  get busquedaNoValido() {
+    return this.myFormSearch.get('busqueda').invalid && this.myFormSearch.get('busqueda').touched;
+  }
+
   createForm() {
     this.myFormSearch = this.fb.group({
       busqueda: ['', [Validators.required, Validators.minLength(3)]]
@@ -29,6 +33,11 @@ export class SearchComponent implements OnInit {
     console.log('Busqueda...', this.myFormSearch);
     if (!this.myFormSearch.invalid) {
       this.busqueda.emit(Object.values(this.myFormSearch.controls)[0].value);
+    } else {
+      Object.values(this.myFormSearch.controls).forEach(control => {
+        control.markAsTouched();
+      });
+      return;
     }
   }
 

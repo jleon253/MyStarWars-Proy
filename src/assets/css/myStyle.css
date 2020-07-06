@@ -186,6 +186,9 @@
 .mySearch {
   width: 100%;
   margin: 10px auto;
+  display: grid;
+  grid-template: 1fr / 2fr 1fr;
+  align-items: end;
 }
 
 @media only screen and (min-width: 576px) and (max-width: 768px) {
@@ -216,7 +219,7 @@
   }
 }
 
-/* line 16, assets/scss/molecules/_search.scss */
+/* line 19, assets/scss/molecules/_search.scss */
 .mySearch .myBtn__primary {
   font-size: 12px;
 }

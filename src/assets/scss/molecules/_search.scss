@@ -1,6 +1,9 @@
 .mySearch{
   width: 100%;
   margin: 10px auto;
+  display: grid;
+  grid-template: 1fr / 2fr 1fr;
+  align-items: end;
   @include bkp-small{
     width: 60%;
   }
